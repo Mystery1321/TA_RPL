@@ -22,4 +22,4 @@ Fungsi yang disediakan:
 - Menghapus data kendaraan
 
 
-Repo ini adalah bagian dari Tugas Akhir Rekayasa Perangkat Lunak GROUP C Semester genap 2022/2023. 
+Repo ini adalah bagian dari Tugas Akhir Rekayasa Perangkat Lunak GROUP D Semester genap 2022/2023. 
