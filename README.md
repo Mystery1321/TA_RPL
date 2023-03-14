@@ -9,6 +9,7 @@ Anggota :
 3. Juniarta Yolanda Sinaga (71210789)
 
 Fungsi yang disediakan:
+
 *Pelanggan
 - Login
 - Mencari kendaraan yang ingin di sewa
