@@ -14,6 +14,8 @@ Fungsi yang disediakan:
 - Login
 - Mencari kendaraan yang ingin di sewa
 - Melakukan sewa mobil
+- Melihat status/history rental
+- Memberi review mobil
 
 *Admin
 - Login
