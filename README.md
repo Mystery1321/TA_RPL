@@ -1,4 +1,4 @@
-SEWA MOBIL
+CAR RENTAL SYSTEM
 
 Aplikasi ini digunakan untuk membantu user
 dalam melakukan transaksi sewa mobil.
