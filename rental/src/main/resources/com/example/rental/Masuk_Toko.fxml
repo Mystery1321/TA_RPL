@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rental.LoginController">
+    <children>
+        <Pane prefHeight="480.0" prefWidth="190.0" style="-fx-background-color: navy;">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <children>
+                <Button layoutX="-2.0" layoutY="97.0" mnemonicParsing="false" onAction="#dashboardOnAction" prefHeight="47.0" prefWidth="190.0" style="-fx-background-color: navy;" text="Dashboard" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font></Button>
+                <Button layoutX="-2.0" layoutY="171.0" mnemonicParsing="false" onAction="#statusOnAction" prefHeight="47.0" prefWidth="190.0" style="-fx-background-color: navy;" text="Status Pemesanan" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+                <Button layoutX="-10.0" layoutY="249.0" mnemonicParsing="false" onAction="#masuktokoOnAction" prefHeight="47.0" prefWidth="207.0" style="-fx-background-color: white;" text="Masuk Toko">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+                <Line endX="83.66665649414062" layoutX="93.0" layoutY="158.0" startX="-83.0" stroke="WHITE" />
+                <Line endX="83.66665649414062" layoutX="94.0" layoutY="233.0" startX="-83.0" stroke="WHITE" />
+                <Label layoutX="25.0" layoutY="385.0" text="CUSTOMER SERVICE" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="413.0" text="Silahkan hubungi kami di" textFill="WHITE" />
+                <Label layoutX="14.0" layoutY="449.0" text="CarRentalSystem@gmail.com" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="13.0" layoutY="430.0" prefHeight="17.0" prefWidth="151.0" text="+62 863-5241-97278" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="58.0" fitWidth="89.0" layoutX="93.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../rentak/logo-arvia-rental.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="11.0" layoutY="35.0" text="CarRentalSystem" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <AnchorPane layoutX="190.0" layoutY="47.0" prefHeight="434.0" prefWidth="531.0" style="-fx-background-color: white;">
+            <children>
+                <Button layoutX="276.0" layoutY="108.0" mnemonicParsing="false" onAction="#tambahOnAction" prefHeight="47.0" prefWidth="174.0" text="Tambah Mobil">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button layoutX="276.0" layoutY="214.0" mnemonicParsing="false" onAction="#ubahOnAction" prefHeight="47.0" prefWidth="174.0" text="Ubah Data Mobil">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Button layoutX="276.0" layoutY="323.0" mnemonicParsing="false" onAction="#hapusOnAction" prefHeight="47.0" prefWidth="174.0" text="Hapus Mobil">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Button>
+                <Label layoutX="215.0" layoutY="14.0" text="Masuk Toko">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Line endX="449.800048828125" endY="1.52587890625E-5" layoutX="83.0" layoutY="51.0" startX="-83.0" />
+                <Label layoutX="70.0" layoutY="108.0" text="Halo Admin!">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Text layoutX="70.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selamat datang kembali di toko anda. Silahkan update toko anda." wrappingWidth="123.6832275390625">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+        <Pane layoutX="190.0" prefHeight="47.0" prefWidth="531.0" style="-fx-background-color: navy;">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <children>
+                <TextField layoutX="44.0" layoutY="12.0" prefHeight="25.0" prefWidth="279.0" promptText="Search Bar" />
+                <Button layoutX="484.0" layoutY="5.0" mnemonicParsing="false" onAction="#profilOnAction" prefHeight="36.0" prefWidth="19.0" style="-fx-background-color: navy;">
+                    <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../rentak/icons8-account-23.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
