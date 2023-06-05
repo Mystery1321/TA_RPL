@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rental.LoginController">
+    <children>
+        <Pane layoutX="-6.0" prefHeight="47.0" prefWidth="727.0" style="-fx-background-color: navy;">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <children>
+                <Text fill="WHITE" layoutX="227.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Formulir Pembayaran">
+                    <font>
+                        <Font name="System Bold" size="27.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <SplitPane dividerPositions="0.1349206349206349" layoutX="66.0" layoutY="73.0" orientation="VERTICAL" prefHeight="380.0" prefWidth="582.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #d9dddc;">
+                    <children>
+                        <Text layoutX="23.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Pemesanan">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="145.0" prefWidth="158.0">
+                    <children>
+                        <Text layoutX="58.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama Pemesan">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="58.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tanggal Peminjaman">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="58.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tanggal Pengembalian">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="58.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jenis Pembayaran">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="58.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Harga">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Text>
+                        <ComboBox layoutX="328.0" layoutY="35.0" prefHeight="25.0" prefWidth="214.0" promptText="Lee Je-Hoon" />
+                        <DatePicker layoutX="328.0" layoutY="85.0" prefHeight="25.0" prefWidth="214.0" showWeekNumbers="true" />
+                        <DatePicker layoutX="328.0" layoutY="134.0" prefHeight="25.0" prefWidth="214.0" />
+                        <ComboBox layoutX="328.0" layoutY="182.0" prefHeight="25.0" prefWidth="214.0" promptText="Transfer Bank" />
+                        <Text layoutX="328.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rp. 300.000">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Text>
+                        <Button layoutX="448.0" layoutY="265.0" mnemonicParsing="false" onAction="#statusOnAction" prefHeight="36.0" prefWidth="93.0" style="-fx-background-color: navy;" text="Bayar" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+                        <Button layoutX="328.0" layoutY="265.0" mnemonicParsing="false" onAction="#deskOnAction" prefHeight="36.0" prefWidth="93.0" style="-fx-background-color: #d9dddc;" text="Batal">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

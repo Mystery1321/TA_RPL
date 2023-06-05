@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rental.LoginController">
+    <left>
+        <AnchorPane prefHeight="485.0" prefWidth="282.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="501.0" fitWidth="288.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../rentak/3f4f04d03d8ce8482d7f87fa220d8911.jpg" />
+                    </image></ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="480.0" prefWidth="450.0" style="-fx-background-color: #d9dddc;" BorderPane.alignment="CENTER">
+            <children>
+                <Button layoutX="255.0" layoutY="419.0" mnemonicParsing="false" onAction="#keluarOnAction" prefHeight="19.0" prefWidth="85.0" text="register">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            <TextField layoutX="61.0" layoutY="96.0" prefHeight="33.0" prefWidth="314.0" />
+            <Text layoutX="62.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama Lengkap " wrappingWidth="145.60552978515625">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField layoutX="61.0" layoutY="163.0" prefHeight="33.0" prefWidth="314.0" />
+            <Text layoutX="62.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tanggal lahir" wrappingWidth="145.60552978515625">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField layoutX="62.0" layoutY="231.0" prefHeight="33.0" prefWidth="314.0" />
+            <Text layoutX="63.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No. Telepon" wrappingWidth="145.60552978515625">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField layoutX="61.0" layoutY="298.0" prefHeight="33.0" prefWidth="314.0" />
+            <Text layoutX="62.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="145.60552978515625">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField layoutX="61.0" layoutY="365.0" prefHeight="33.0" prefWidth="314.0" />
+            <Text layoutX="62.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="145.60552978515625">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="140.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTER FORM" wrappingWidth="158.405517578125">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Button layoutX="113.0" layoutY="419.0" mnemonicParsing="false" onAction="#cancelOnAction" prefHeight="19.0" prefWidth="85.0" text="cancel">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            </children>
+        </AnchorPane>
+    </right>
+</BorderPane>
