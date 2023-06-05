@@ -1,5 +1,8 @@
 package com.example.rental;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -8,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -44,7 +48,7 @@ public class LoginController {
     public void btnsignin(ActionEvent event) throws IOException {
         String username = txtusername.getText();
         String password = txtpassword.getText();
-        if(username.equals("admin") && password.equals("admin123")){
+        if(username.equals("a") && password.equals("1")){
             Parent toMenu = FXMLLoader.load(getClass().getResource("Masuk_Toko.fxml"));
             Scene sceneMenu = new Scene(toMenu);
             Stage stageMenu = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -173,4 +177,159 @@ public class LoginController {
         stageMenu.setScene(sceneMenu);
         stageMenu.show();
     }
+
+    @FXML
+    private TableColumn<String, String> colnama;
+    @FXML
+    private TableColumn<String, String> colmerk;
+    @FXML
+    private TableColumn<String, String> colkapasitas;
+    @FXML
+    private TableColumn<String, String> colharga;
+    @FXML
+    private TableColumn<String, String> colbahanbakar;
+
+    @FXML
+    private TextField namaTambah;
+    @FXML
+    private TextField txtmerk;
+    @FXML
+    private TextField txtkapasitas;
+    @FXML
+    private TextField txtharga;
+    @FXML
+    private TextField txtbahanbakar;
+
+
+    @FXML
+    private TableView<Object> tabelMobil;
+
+    @FXML
+    private Button tambahbtn;
+
+    private ObservableList<Object> jenisMobilList = FXCollections.observableArrayList();
+
+    @FXML
+    void tambahajaOnAction(ActionEvent event) {
+        String colnama = namaTambah.getText();
+        String colmerk = txtmerk.getText();
+        String colkapasitas = txtkapasitas.getText();
+        String colharga = txtharga.getText();
+        String colbahanbakar = txtbahanbakar.getText();
+
+        if (!colnama.isEmpty()) {
+            jenisMobilList.add(colnama);
+            jenisMobilList.add(colmerk);
+            jenisMobilList.add(colkapasitas);
+            jenisMobilList.add(colbahanbakar);
+            jenisMobilList.add(colharga);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Tambah Jenis Mobil Berhasil");
+            alert.setHeaderText(null);
+            alert.setContentText("Data jenis mobil " + colnama + " telah disimpan.");
+            alert.showAndWait();
+
+            updateTableView();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Text Field masih kosong!");
+            alert.setHeaderText(null);
+            alert.setContentText("Silahkan isi terlebih dahulu Jenis Mobil");
+            alert.showAndWait();
+        }
+    }
+
+    private void updateTableView() {
+        colnama.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+        colmerk.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+        colharga.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+        colbahanbakar.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+        colkapasitas.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+        tabelMobil.setItems(jenisMobilList);
+    }
+
+
+
+//    private TableColumn<Mobil,String> nama;
+//    @FXML
+//    private TableColumn<String, String> merk;
+//    @FXML
+//    private TableColumn<String, String> jenis;
+//    @FXML
+//    private TableColumn<String, String> kapasitas;
+//    @FXML
+//    private TableColumn<String, String> harga;
+//    @FXML
+//    private TableColumn<String, String> bahanbakar;
+
+//    @FXML
+//    private TextField namaTambah;
+//    @FXML
+//    private TextField txtmerk;
+//    @FXML
+//    private TextField txtharga;
+//    @FXML
+//    private TextField txtkapasitas;
+//    @FXML
+//    private TextField txtbahanbakar;
+//    @FXML
+//    private ComboBox cbjenis;
+//    @FXML
+//    private Button tambahbtn;
+//    @FXML
+//    private TableView<Mobil> tabelMobil;
+//
+//    private ObservableList<Mobil> jenisMobilList;
+//    TableColumn<Mobil,String> colnama = new TableColumn<>("Nama");
+//    //colnama.setCellValueFactory((new PropertyValueFactory<>("nama")));
+//    TableColumn<Mobil,String> colmerk = new TableColumn<>("Merk");
+//    TableColumn<Mobil,String> coljenis = new TableColumn<>("Jenis");
+//    TableColumn<Mobil,String> colkapasitas = new TableColumn<>("Kapasitas");
+//    TableColumn<Mobil,String> colharga = new TableColumn<>("Harga");
+//    TableColumn<Mobil,String> colbahanbakar = new TableColumn<>("Bahan Bakar");
+//
+//    @FXML
+//    protected void tambahajaOnAction(ActionEvent event) {
+//        String nama = namaTambah.getText();
+//        String merk = txtmerk.getText();
+//        String jenis = String.valueOf(cbjenis.getValue());
+//        String kapasitas = txtkapasitas.getText();
+//        String harga = txtharga.getText();
+//        String bahanbakar = txtbahanbakar.getText();
+//        tabelMobil = new TableView<>();
+//        Mobil mbl = new Mobil(nama, merk, jenis, kapasitas, harga, bahanbakar);
+//
+//
+//        if (!nama.isEmpty()) {
+//            jenisMobilList = FXCollections.observableArrayList();
+//            jenisMobilList.add(mbl);
+//            tabelMobil.setItems(jenisMobilList);
+//
+//            tabelMobil.getColumns().addAll(colnama, colmerk, coljenis, colkapasitas, colharga, colbahanbakar);
+//
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//            alert.setTitle("Tambah Jenis Mobil Berhasil");
+//            alert.setHeaderText(null);
+//            alert.setContentText("Data jenis mobil " + nama + " telah disimpan.");
+//            alert.showAndWait();
+//
+//            updateTableView();
+//        } else {
+//            Alert alert = new Alert(Alert.AlertType.WARNING);
+//            alert.setTitle("Text Field masih kosong!");
+//            alert.setHeaderText(null);
+//            alert.setContentText("Silahkan isi terlebih dahulu Jenis Mobil");
+//            alert.showAndWait();
+//        }
+//    }
+//    private void updateTableView() {
+//        colnama.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+//        colmerk.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+//        coljenis.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+//        kapasitas.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+//        harga.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+//        bahanbakar.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+//        tabelMobil.setItems(jenisMobilList);
+//    }
 }
