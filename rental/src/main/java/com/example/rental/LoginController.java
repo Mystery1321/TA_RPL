@@ -74,14 +74,6 @@ public class LoginController {
         stageMenu.setScene(sceneMenu);
         stageMenu.show();
     }
-    public void tambahOnAction(ActionEvent eventMenu) throws IOException {
-        Parent toMenu = FXMLLoader.load(getClass().getResource("TambahMobil.fxml"));
-        Scene sceneMenu = new Scene(toMenu);
-        Stage stageMenu = (Stage) ((Node) eventMenu.getSource()).getScene().getWindow();
-
-        stageMenu.setScene(sceneMenu);
-        stageMenu.show();
-    }
     public void ubahOnAction(ActionEvent eventMenu) throws IOException {
         Parent toMenu = FXMLLoader.load(getClass().getResource("UbahMobil.fxml"));
         Scene sceneMenu = new Scene(toMenu);
@@ -178,59 +170,48 @@ public class LoginController {
         stageMenu.show();
     }
 
-    @FXML
-    private TableColumn<String, String> colnama;
-    @FXML
-    private TableColumn<String, String> colmerk;
-    @FXML
-    private TableColumn<String, String> colkapasitas;
-    @FXML
-    private TableColumn<String, String> colharga;
-    @FXML
-    private TableColumn<String, String> colbahanbakar;
 
     @FXML
     private TextField namaTambah;
     @FXML
     private TextField txtmerk;
     @FXML
+    private ComboBox cbjenis;
+    @FXML
     private TextField txtkapasitas;
     @FXML
     private TextField txtharga;
     @FXML
     private TextField txtbahanbakar;
-
-
     @FXML
-    private TableView<Object> tabelMobil;
+    private TableView<Mobil> table;
 
-    @FXML
-    private Button tambahbtn;
+    private ObservableList<Mobil> data;
 
     private ObservableList<Object> jenisMobilList = FXCollections.observableArrayList();
-
+//    Try Create Data
     @FXML
     void tambahajaOnAction(ActionEvent event) {
-        String colnama = namaTambah.getText();
-        String colmerk = txtmerk.getText();
-        String colkapasitas = txtkapasitas.getText();
-        String colharga = txtharga.getText();
-        String colbahanbakar = txtbahanbakar.getText();
+        data = FXCollections.observableArrayList();
+        table = new TableView<>();
+        table.setItems(data);
 
-        if (!colnama.isEmpty()) {
-            jenisMobilList.add(colnama);
-            jenisMobilList.add(colmerk);
-            jenisMobilList.add(colkapasitas);
-            jenisMobilList.add(colbahanbakar);
-            jenisMobilList.add(colharga);
+        String nama = namaTambah.getText();
+        String merk = txtmerk.getText();
+        String kapasitas = txtkapasitas.getText();
+        String harga = txtharga.getText();
+        String jenis = String.valueOf(cbjenis.getValue());
+        String bahanbakar = txtbahanbakar.getText();
+
+        if (!nama.isEmpty()) {
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Tambah Jenis Mobil Berhasil");
             alert.setHeaderText(null);
-            alert.setContentText("Data jenis mobil " + colnama + " telah disimpan.");
+            alert.setContentText("Data jenis mobil " + nama + " telah disimpan.");
             alert.showAndWait();
 
-            updateTableView();
+//            updateTableView();
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Text Field masih kosong!");
@@ -239,15 +220,14 @@ public class LoginController {
             alert.showAndWait();
         }
     }
-
-    private void updateTableView() {
-        colnama.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
-        colmerk.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
-        colharga.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
-        colbahanbakar.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
-        colkapasitas.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
-        tabelMobil.setItems(jenisMobilList);
-    }
+//    private void updateTableView() {
+//        colnama.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+//        colmerk.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+//        colharga.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+//        colbahanbakar.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+//        colkapasitas.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()));
+//        tabelMobil.setItems(jenisMobilList);
+//    }
 
 
 
