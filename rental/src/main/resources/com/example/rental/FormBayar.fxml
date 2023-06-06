@@ -57,7 +57,7 @@
                                 <Font size="20.0" />
                             </font>
                         </Text>
-                        <ComboBox layoutX="328.0" layoutY="35.0" prefHeight="25.0" prefWidth="214.0" promptText="Lee Je-Hoon" />
+                        <ComboBox layoutX="328.0" layoutY="35.0" prefHeight="25.0" prefWidth="214.0" promptText="Juniarta Yolanda Sinaga" />
                         <DatePicker layoutX="328.0" layoutY="85.0" prefHeight="25.0" prefWidth="214.0" showWeekNumbers="true" />
                         <DatePicker layoutX="328.0" layoutY="134.0" prefHeight="25.0" prefWidth="214.0" />
                         <ComboBox layoutX="328.0" layoutY="182.0" prefHeight="25.0" prefWidth="214.0" promptText="Transfer Bank" />
